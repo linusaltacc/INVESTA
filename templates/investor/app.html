@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Startup Management Platform</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .role-selection {
+      margin-bottom: 20px;
+    }
+
+    .role-selection label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .role-selection input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .role-selection button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .role-selection button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Startup Management Platform</h1>
+
+    <div class="role-selection">
+      <label>Select your role:</label>
+      <input type="radio" id="investorRole" name="role" value="investor">
+      <label for="investorRole">Investor</label>
+      <input type="radio" id="innovatorRole" name="role" value="innovator">
+      <label for="innovatorRole">Innovator</label>
+      <input type="radio" id="mentorRole" name="role" value="mentor">
+      <label for="mentorRole">Mentor</label>
+      <button onclick="selectRole()">Next</button>
+    </div>
+
+    <div id="loginContainer" style="display: none;">
+      <!-- Investor Login -->
+      <div id="investorLogin" class="form-group">
+        <h2>Investor Login</h2>
+        <label for="investorEmail">Email:</label>
+        <input type="text" id="investorEmail" placeholder="Enter email">
+        <label for="investorPassword">Password:</label>
+        <input type="password" id="investorPassword" placeholder="Enter password">
+        <button onclick="investorLogin()">Login</button>
+      </div>
+
+      <!-- Innovator Login -->
+      <div id="innovatorLogin" class="form-group">
+        <h2>Innovator Login</h2>
+        <label for="innovatorEmail">Email:</label>
+        <input type="text" id="innovatorEmail" placeholder="Enter email">
+        <label for="innovatorPassword">Password:</label>
+        <input type="password" id="innovatorPassword" placeholder="Enter password">
+        <button onclick="innovatorLogin()">Login</button>
+      </div>
+
+      <!-- Mentor Login -->=
+      <div id="mentorLogin" class="form-group">
+        <h2>Mentor Login</h2>
+        <label for="mentorEmail">Email:</label>
+        <input type="text" id="mentorEmail" placeholder="Enter email">
+        <label for="mentorPassword">Password:</label>
+        <input type="password" id="mentorPassword" placeholder="Enter password">
+        <button onclick="mentorLogin()">Login</button>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript code for role selection and login functionality
+      function selectRole() {
+        var investorRole = document.getElementById("investorRole");
+        var innovatorRole = document.getElementById("innovatorRole");
+        var mentorRole = document.getElementById("mentorRole");
+
+        if (investorRole.checked) {
+          document.getElementById("loginContainer").style.display = "block";
+          document.getElementById("innovatorLogin").style.display = "none";
+          document.getElementById("mentorLogin").style.display = "none";
+        } else if (innovatorRole.checked) {
+          document.getElementById("loginContainer").style.display = "block";
+          document.getElementById("investorLogin").style.display = "none";
+          document.getElementById("mentorLogin").style.display = "none"; } else if (mentorRole.checked) { document.getElementById("loginContainer").style.display = "block"; document.getElementById("investorLogin").style.display = "none"; document.getElementById("innovatorLogin").style.display = "none"; } }
+            function investorLogin() {
+                var investorEmail = document.getElementById("investorEmail").value;
+                var investorPassword = document.getElementById("investorPassword").value;
+
+                    // Perform investor login logic here
+    // Redirect to investor dashboard
+    window.location.href = "investor-dashboard.html";
+  }
+    function innovatorLogin() {
+    var innovatorEmail = document.getElementById("innovatorEmail").value;
+    var innovatorPassword = document.getElementById("innovatorPassword").value;
+    // Perform innovator login logic here
+    // Redirect to innovator dashboard
+    window.location.href = "innovator-dashboard.html";
+  }
+  function mentorLogin() {
+    var mentorEmail = document.getElementById("mentorEmail").value;
+    var mentorPassword = document.getElementById("mentorPassword").value;
+    // Perform mentor login logic here
+    // Redirect to mentor dashboard
+    window.location.href = "mentor-dashboard.html";
+  }
+</script>
+</div> </body> </html>

@@ -1,0 +1,229 @@
+{% extends 'innovator/base.html' %}
+{% block head%}
+<style>
+#registration-page {
+    height:100%;
+    background-image: url('/static/assets/images/16.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:scroll;
+}
+
+.signup-form  {
+    flex:1;
+    max-width:800px;
+    border-radius: 50px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    opacity: 70%;
+  }
+  
+.form-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom:1px solid #eee;
+}
+
+.form-header h1 {
+    font-size: 28px;
+    text-align:center;
+    color:#333;
+}
+
+.form-body-p {
+    padding:5px 10px;
+}
+
+.row-p {
+    display:flex; 
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+  
+.input-group {
+    flex:1;  
+    display:flex;
+    flex-direction:column; 
+    margin:10px 5px;
+}
+
+label {
+    color:#333;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"] ,
+input[type="password"],
+input[type="file"],
+input[type="number"],
+select,
+textarea,
+input[type="date"]  {
+    width:100%;
+    font-size: 18px;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:#333;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
+
+input[type="submit"] {
+    width:100%;
+    padding: 15px;
+    background-color: #333;
+    font-size: 18px;
+    border:none;
+    border-radius:5px;
+    color:#fff;
+    cursor:pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+</style>
+{% endblock head%}
+{% block body %}
+        <section id="registration-page">
+            <form action="/dashboard/growth" class="signup-form" method="POST">
+                <div class="form-header">
+                    <h1>Add Startup details</h1>
+                </div>
+
+                <div class="form-body-p">
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Avg. Profit</label>
+                            <input type="text" id="avg_profit" name="avg_profit" value="₹0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Daily Users</label>
+                            <input type="text" id="daily_users" name="daily_users" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Avg. New Clients</label>
+                            <input type="text" id="new_clients" name="new_clients" value="+0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Sales</label>
+                            <input type="text" id="sales" name="sales" value="₹0">
+                        </div>
+                    </div>
+                    <label>Active Users</label>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Users</label>
+                            <input type="text" id="users" name="users" value="0k">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Clicks</label>
+                            <input type="text" id="clicks" name="clicks" value="0M">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Sales</label>
+                            <input type="text" id="active_sales" name="active_sales" value="₹0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Items</label>
+                            <input type="text" id="items" name="items" value="0">
+                        </div>
+                    </div>
+                    <label>Profit Overview</label>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Increase %</label>
+                            <input type="text" id="inc" name="inc" value="0%">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Year</label>
+                            <input type="text" id="year" name="year" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Apr</label>
+                            <input type="text" id="Apr" name="Apr" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>May</label>
+                            <input type="text" id="May" name="May" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Jun</label>
+                            <input type="text" id="Jun" name="Jun" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Jul</label>
+                            <input type="text" id="Jul" name="Jul" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Aug</label>
+                            <input type="text" id="Aug" name="Aug" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Sep</label>
+                            <input type="text" id="Sep" name="Sep" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Oct</label>
+                            <input type="text" id="Oct" name="Oct" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Nov</label>
+                            <input type="text" id="Nov" name="Nov" value="0">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Dec</label>
+                            <input type="text" id="Dec" name="Dec" value="0">
+                        </div>
+                    </div>
+                <div class="form-footer">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </section>
+{% endblock body %}

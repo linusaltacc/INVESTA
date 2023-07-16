@@ -1,0 +1,155 @@
+{% extends 'innovator/base.html' %}
+{% block head%}
+<style>
+#registration-page {
+    height:100%;
+    background-image: url('/static/assets/images/16.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:scroll;
+}
+
+.signup-form  {
+    flex:1;
+    max-width:800px;
+    border-radius: 50px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    opacity: 70%;
+  }
+  
+.form-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom:1px solid #eee;
+}
+
+.form-header h1 {
+    font-size: 28px;
+    text-align:center;
+    color:#333;
+}
+
+.form-body-p {
+    padding:5px 10px;
+}
+
+.row-p {
+    display:flex; 
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+  
+.input-group {
+    flex:1;  
+    display:flex;
+    flex-direction:column; 
+    margin:10px 5px;
+}
+
+label {
+    color:#333;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"] ,
+input[type="password"],
+input[type="file"],
+input[type="number"],
+select,
+textarea,
+input[type="date"]  {
+    width:100%;
+    font-size: 18px;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:#333;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
+
+input[type="submit"] {
+    width:100%;
+    padding: 15px;
+    background-color: #333;
+    font-size: 18px;
+    border:none;
+    border-radius:5px;
+    color:#fff;
+    cursor:pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+</style>
+{% endblock head%}
+{% block body %}
+        <section id="registration-page">
+            <form action="/dashboard/portfolio" class="signup-form" method="POST">
+                <div class="form-header">
+                    <h1>Add Startup details</h1>
+                </div>
+
+                <div class="form-body-p">
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter the student's Name">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Location</label>
+                            <input type="text" id="location" name="location" placeholder="Enter Startup Location">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Domain</label>
+                            <input type="text" id="domain" name="domain" placeholder="Enter Startup Domain">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Short Description</label>
+                            <input type="text" id="one_liner" name="one_liner" placeholder="Describe Your Problem Statement in one line.">
+                        </div>
+                    </div>
+                    <div class="row-p">
+                        <div class="input-group">
+                            <label>Brief Description</label>
+                            <input type="textarea" id="description" name="description" placeholder="Describe Your Problem Statement in Detail.">
+                        </div>
+                    </div>
+                        <div class="input-group">
+                            <label>Problem Statement</label>
+                            <input type="textarea" id="problem_statement" name="problem_statement" placholder="Describe Problem Your Startup Addresses">
+                        </div>
+                    <div class="input-group">
+                        <label>Unique Selling Point</label>
+                        <input type="textarea" name="usp" placholder="Your Startup's USP">
+                    </div>
+                    <div class="input-group">
+                        <label>Revenue Plans</label>
+                        <input type="textarea" name="revenue_model" placholder="Revenue model">
+                    </div>
+                <div class="form-footer">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </section>
+{% endblock body %}
