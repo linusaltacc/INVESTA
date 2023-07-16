@@ -117,6 +117,12 @@ def investors():
     if g.innovator:
         return render_template('innovator/investors.html')
     return redirect('/login')
+@app.route('/dashboard/ai_chat', methods=['GET', 'POST'])
+def ai_chat():
+    if g.investor:
+        return render_template('innovator/ai_chat.html')
+    return redirect('/login')
+
 @app.route('/dashboard/profile', methods=['GET', 'POST'])
 def profile():
     if g.innovator:
